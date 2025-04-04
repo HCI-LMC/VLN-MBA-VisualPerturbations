@@ -55,7 +55,15 @@ cd map_nav_src
 bash scripts/run_r2r.sh # (run_reverie.sh, run_soon.sh)
 ```
 
-## 5. Additional Resources 
+## 5. Test
+Our report results on the test set are from the official website of Eval.ai. 
+R2R: [https://eval.ai/web/challenges/challenge-page/97/submission](https://eval.ai/web/challenges/challenge-page/97/submission)
+REVERIE: [https://eval.ai/web/challenges/challenge-page/606/overview](https://eval.ai/web/challenges/challenge-page/606/overview)
+SOON: [https://eval.ai/web/challenges/challenge-page/1275/overview](https://eval.ai/web/challenges/challenge-page/1275/overview)
+![image](https://github.com/user-attachments/assets/6a245c0a-8c61-4500-b3b8-26b269bce4a5)
+
+
+## 6. Additional Resources 
 
 1) Panoramic trajectory visualization is provided by [Speaker-Follower](https://gist.github.com/ronghanghu/d250f3a997135c667b114674fc12edae).
 2) Top-down maps for Matterport3D are available in [NRNS](https://github.com/meera1hahn/NRNS).
@@ -65,7 +73,7 @@ bash scripts/run_r2r.sh # (run_reverie.sh, run_soon.sh)
 
 
 
-## 6. Citation
+## 7. Citation
 
 ```bibtex
 @article{zhang2024seeing,

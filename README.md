@@ -30,12 +30,12 @@ pip install -r requirements.txt
 mkdir -p datasets/pretrained 
 wget https://nlp.cs.unc.edu/data/model_LXRT.pth -P datasets/pretrained
 ```
-5. Clip-based rgb feature and Depth feature
+5. Download Clip-based rgb feature and Depth feature (glbson and imagenet) form (链接: [https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv) 提取码: n8gv)
 
 
 ## Pretraining
 
-The pretrained ckpt is at [here](). You can also pre train yourself, just change the pre training RGB of Duet from vit based to clip based
+The pretrained ckpt is at [here](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv). You can also pretrain the model by yourself, just change the pre training RGB of Duet from vit based to clip based. 
 Combine behavior cloning and auxiliary proxy tasks in pretraining:
 ```pretrain
 cd pretrain_src

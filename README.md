@@ -1,5 +1,5 @@
 # VLN-MBA-VisualPerturbations
-Official code for "Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations" (IJCNN2025 accept)
+Official code for "Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations" **(IJCNN2025 Accepted)** 
 
 
 This repository is the official implementation of **[Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations](https://arxiv.org/abs/2409.05552).**
@@ -9,7 +9,7 @@ This repository is the official implementation of **[Seeing is Believing? Enhanc
 ![image](https://github.com/user-attachments/assets/c4d1ab8f-bfaf-4c3f-8198-0f134254e32a)
 
 
-## Requirements
+## 1. Requirements
 
 1. Install Matterport3D simulator for `R2R`, `REVERIE` and `SOON`: follow instructions [here](https://github.com/peteanderson80/Matterport3DSimulator).
 ```
@@ -23,26 +23,31 @@ conda activate MBA
 pip install -r requirements.txt
 ```
 
-3. Download data from [Dropbox](https://www.dropbox.com/sh/u3lhng7t2gq36td/AABAIdFnJxhhCg2ItpAhMtUBa?dl=0), including processed annotations, features and pretrained models of REVERIE, SOON, R2R and R4R datasets. Put the data in `datasets' directory.
+## 2. Data Download
 
-4. Download pretrained lxmert
+1. Download data from [Dropbox](https://www.dropbox.com/sh/u3lhng7t2gq36td/AABAIdFnJxhhCg2ItpAhMtUBa?dl=0), including processed annotations, features and pretrained models of REVERIE, SOON, R2R and R4R datasets. Put the data in `datasets' directory.
+
+2. Download pretrained lxmert
 ```
 mkdir -p datasets/pretrained 
 wget https://nlp.cs.unc.edu/data/model_LXRT.pth -P datasets/pretrained
 ```
-5. Download Clip-based rgb feature and Depth feature (glbson and imagenet) form (链接: [https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv) 提取码: n8gv)
+3. Download Clip-based rgb feature and Depth feature (glbson and imagenet) form (链接: [https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv) 提取码: n8gv)
+```
+python get_depth.py
+```
+The ground truth depth image (undistorted_depth_images) is obtained from the [Matterport Simulator](https://github.com/peteanderson80/Matterport3DSimulator), and features are extracted through a. The code for each view is referenced from [HAMT](https://github.com/cshizhe/VLN-HAMT/tree/main/preprocess) and [here](https://github.com/zehao-wang/LAD/tree/main/preprocess)
 
+## 3. Pretraining
 
-## Pretraining
-
-The pretrained ckpt is at [here](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv). You can also pretrain the model by yourself, just change the pre training RGB of Duet from vit based to clip based. 
+The pretrained ckpts for REVERIE, R2R, SOON  is at [here](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv). You can also pretrain the model by yourself, just change the pre training RGB of Duet from vit based to clip based. 
 Combine behavior cloning and auxiliary proxy tasks in pretraining:
 ```pretrain
 cd pretrain_src
 bash run_r2r.sh # (run_reverie.sh, run_soon.sh)
 ```
 
-## Fine-tuning & Evaluation for `R2R`, `REVERIE` and `SOON`
+## 4. Fine-tuning & Evaluation for `R2R`, `REVERIE` and `SOON`
 
 Use pseudo interative demonstrator to fine-tune the model:
 ```finetune
@@ -50,8 +55,17 @@ cd map_nav_src
 bash scripts/run_r2r.sh # (run_reverie.sh, run_soon.sh)
 ```
 
+## 5. Additional Resources 
 
-## Citation
+1) Panoramic trajectory visualization is provided by [Speaker-Follower](https://gist.github.com/ronghanghu/d250f3a997135c667b114674fc12edae).
+2) Top-down maps for Matterport3D are available in [NRNS](https://github.com/meera1hahn/NRNS).
+3) Instructions for extracting image features from Matterport3D scenes can be found in [VLN-HAMT](https://github.com/cshizhe/VLN-HAMT).
+
+(copy from [goat](https://github.com/CrystalSixone/VLN-GOAT)) We extend our gratitude to all the authors for their significant contributions and for sharing their resources.
+
+
+
+## 6. Citation
 
 ```bibtex
 @article{zhang2024seeing,
@@ -63,5 +77,5 @@ bash scripts/run_r2r.sh # (run_reverie.sh, run_soon.sh)
   ```
 
 ## Acknowledgments
-Our code is based on [VLN-DUET](https://github.com/cshizhe/VLN-DUET). Thanks for their great works!
+Our code is based on [VLN-DUET](https://github.com/cshizhe/VLN-DUET) and partially referenced from [HAMT](https://github.com/cshizhe/VLN-HAMT/tree/main/preprocess) for extract view features. Thanks for their great works!
 

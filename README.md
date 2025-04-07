@@ -31,10 +31,11 @@ mkdir -p datasets/pretrained
 wget https://nlp.cs.unc.edu/data/model_LXRT.pth -P datasets/pretrained
 ```
 3. Download Clip-based rgb feature and Depth feature (glbson and imagenet) form (链接: [https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv](https://pan.baidu.com/s/1lKend8xnwuy1uxn-aIDBtw?pwd=n8gv) 提取码: n8gv)
+The ground truth depth image (undistorted_depth_images) is obtained from the [Matterport Simulator](https://github.com/peteanderson80/Matterport3DSimulator), and depth view features are extracted through here:
 ```
 python get_depth.py
 ```
-The ground truth depth image (undistorted_depth_images) is obtained from the [Matterport Simulator](https://github.com/peteanderson80/Matterport3DSimulator), and features are extracted through a. The code for each view is referenced from [HAMT](https://github.com/cshizhe/VLN-HAMT/tree/main/preprocess) and [here](https://github.com/zehao-wang/LAD/tree/main/preprocess)
+ The code is referenced from [HAMT](https://github.com/cshizhe/VLN-HAMT/tree/main/preprocess) and [here](https://github.com/zehao-wang/LAD/tree/main/preprocess)
 
 ## 3. Pretraining
 

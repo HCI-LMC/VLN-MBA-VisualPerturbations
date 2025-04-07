@@ -1,12 +1,10 @@
 # VLN-MBA-VisualPerturbations
-Official code for "Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations" **(IJCNN2025 Accepted)** 
 
-
-This repository is the official implementation of **[Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations](https://arxiv.org/abs/2409.05552).**
+This repository is the official implementation of **[Seeing is Believing? Enhancing Vision-Language Navigation using Visual Perturbations](https://arxiv.org/abs/2409.05552).**,**(IJCNN2025 Accepted)** 
 
 >Vision-and-language navigation (VLN) enables the agent to navigate to a remote location following the natural language instruction in 3D environments. To represent the previously visited environment, most approaches for VLN implement memory using recurrent states, topological maps, or top-down semantic maps. In contrast to these approaches, we build the top-down egocentric and dynamically growing Grid Memory Map (i.e., GridMM) to structure the visited environment. From a global perspective, historical observations are projected into a unified grid map in a top-down view, which can better represent the spatial relations of the environment. From a local perspective, we further propose an instruction relevance aggregation method to capture fine-grained visual clues in each grid region. Extensive experiments are conducted on both the REVERIE, R2R, SOON datasets in the discrete environments, and the R2R-CE dataset in the continuous environments, showing the superiority of our proposed method.
 
-![image](https://github.com/user-attachments/assets/c4d1ab8f-bfaf-4c3f-8198-0f134254e32a)
+> ![image](https://github.com/user-attachments/assets/c4d1ab8f-bfaf-4c3f-8198-0f134254e32a)
 
 
 ## 1. Requirements
